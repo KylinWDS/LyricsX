@@ -4,6 +4,8 @@
 <dict>
 	<key>DesktopLyricsEnabled</key>
 	<true/>
+	<key>TouchBarLyricsEnabled</key>
+	<true/>
 	<key>HideLyricsWhenMousePassingBy</key>
 	<true/>
 	<key>DisableLyricsWhenPaused</key>
@@ -24,6 +26,10 @@
 	<string>Helvetica</string>
 	<key>LyricsWindowFontSize</key>
 	<string>13</string>
+	<key>TouchBarLyricsFontName</key>
+	<string></string>
+	<key>TouchBarLyricsFontSize</key>
+	<integer>18</integer>
 	<key>LyricsFilterEnabled</key>
 	<true/>
 	<key>LyricsSmartFilterEnabled</key>
@@ -63,6 +69,10 @@
 	</array>
 	<key>GlobalLyricsOffset</key>
 	<integer>0</integer>
+	<key>PreferredPlayerIndex</key>
+	<integer>-1</integer>
+	<key>UseSystemWideNowPlaying</key>
+	<true/>
 	<key>NSApplicationCrashOnExceptions</key>
 	<true/>
 </dict>

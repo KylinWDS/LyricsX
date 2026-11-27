@@ -1,1 +1,5 @@
 Product
+.build/
+Vendor/**/.DS_Store
+**/xcuserdata/
+.workbuddy/

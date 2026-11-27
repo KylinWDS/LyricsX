@@ -81,6 +81,12 @@ extension UserDefaults {
                       size: CGFloat(defaults[.lyricsWindowFontSize]))
             ?? NSFont.labelFont(ofSize: CGFloat(defaults[.desktopLyricsFontSize]))
     }
+
+    var touchBarLyricsFont: NSFont {
+        return NSFont(name: self[.touchBarLyricsFontName],
+                      size: CGFloat(self[.touchBarLyricsFontSize]))
+            ?? NSFont.systemFont(ofSize: CGFloat(self[.touchBarLyricsFontSize]))
+    }
 }
 
 extension UserDefaults {

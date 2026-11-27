@@ -19,7 +19,7 @@ import AppCenterCrashes
 import Sparkle
 #endif
 
-@NSApplicationMain
+@main
 class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation, NSMenuDelegate {
     
     static var shared: AppDelegate? {

@@ -48,7 +48,9 @@ extension MusicPlayers {
             let idx = defaults[.preferredPlayerIndex]
             if idx == -1 {
                 if defaults[.useSystemWideNowPlaying] {
-                    designatedPlayer = MusicPlayers.SystemMedia()
+                    // macOS 15.4+ 上 MusicPlayers.SystemMedia 的 MediaRemote 直连被系统门禁，
+                    // 优先使用 perl 桥接适配器，失败时回退原实现。
+                    designatedPlayer = MusicPlayers.SystemMediaAdapter() ?? MusicPlayers.SystemMedia()
                 } else {
                     let players = MusicPlayerName.scriptableCases.compactMap(MusicPlayers.Scriptable.init)
                     designatedPlayer = MusicPlayers.NowPlaying(players: players)

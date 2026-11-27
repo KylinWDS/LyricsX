@@ -39,6 +39,15 @@ class TouchBarLyricsItem: NSCustomTouchBarItem {
             .receive(on: DispatchQueue.lyricsDisplay.cx)
             .invoke(TouchBarLyricsItem.handleLyricsDisplay, weaklyOn: self)
             .store(in: &cancelBag)
+        // 与桌面歌词相同的绑定模式：
+        // 文字颜色复用桌面歌词颜色偏好（黑底白字，显示页颜色选择器直接生效）
+        // 注：必须绑定在 lyricsTextField 上——textColor 属性在 KaraokeLabel，
+        // 绑到 item 自身会因 KVC 找不到 key 而在启动时崩溃
+        lyricsTextField.bind(NSBindingName("textColor"), to: .standard, withDefaultName: .desktopLyricsColor)
+        // 字体使用 Touch Bar 独立偏好（桌面歌词字体 24pt 对 Touch Bar 过大）
+        observeDefaults(keys: [.touchBarLyricsFontName, .touchBarLyricsFontSize], options: [.initial]) { [unowned self] in
+            self.lyricsTextField.font = defaults.touchBarLyricsFont
+        }
     }
     
     private func handleLyricsDisplay(event: (lyrics: Lyrics?, index: Int?)) {

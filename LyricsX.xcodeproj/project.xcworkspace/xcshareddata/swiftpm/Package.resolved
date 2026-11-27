@@ -2,24 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "AppCenter",
-        "repositoryURL": "https://github.com/microsoft/appcenter-sdk-apple",
-        "state": {
-          "branch": null,
-          "revision": "013bffe628b49433d7bc334146a4ed8c507c0e32",
-          "version": "4.1.1"
-        }
-      },
-      {
-        "package": "CombineX",
-        "repositoryURL": "https://github.com/cx-org/CombineX",
-        "state": {
-          "branch": null,
-          "revision": "98096c6b2a51481cb6e4bae8da0a808d8cab09a1",
-          "version": "0.4.0"
-        }
-      },
-      {
         "package": "CXExtensions",
         "repositoryURL": "https://github.com/cx-org/CXExtensions",
         "state": {
@@ -65,30 +47,12 @@
         }
       },
       {
-        "package": "LyricsKit",
-        "repositoryURL": "https://github.com/ddddxxx/LyricsKit",
-        "state": {
-          "branch": null,
-          "revision": "5506ee497ca689ed1686655ebb11e8ee29cc24cb",
-          "version": "0.11.0"
-        }
-      },
-      {
         "package": "MusicPlayer",
         "repositoryURL": "https://github.com/ddddxxx/MusicPlayer",
         "state": {
           "branch": null,
           "revision": "50904bac7aec79c5842f2ec3d1a1d858496dd6fe",
           "version": "0.8.2"
-        }
-      },
-      {
-        "package": "PLCrashReporter",
-        "repositoryURL": "https://github.com/microsoft/PLCrashReporter.git",
-        "state": {
-          "branch": null,
-          "revision": "de6b8f9db4b2a0aa859a5507550a70548e4da936",
-          "version": "1.8.1"
         }
       },
       {
@@ -110,12 +74,21 @@
         }
       },
       {
-        "package": "Sparkle",
-        "repositoryURL": "https://github.com/sparkle-project/Sparkle",
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit",
         "state": {
           "branch": null,
-          "revision": "c0933a516b420806e9216e71bd13ba76c54f0de6",
-          "version": "1.26.0"
+          "revision": "328b53b7e3d3d0f32d03adaf7c84297a7310cdf5",
+          "version": "5.0.0"
+        }
+      },
+      {
+        "package": "MASShortcut",
+        "repositoryURL": "https://github.com/cocoabits/MASShortcut",
+        "state": {
+          "branch": "master",
+          "revision": "6f2603c6b6cc18f64a799e5d2c9d3bbc467c413a",
+          "version": null
         }
       },
       {
@@ -134,24 +107,6 @@
           "branch": null,
           "revision": "72775c4b4dfceba8f6f43820d50f9286dc97160d",
           "version": "0.2.1"
-        }
-      },
-      {
-        "package": "SwiftyOpenCC",
-        "repositoryURL": "https://github.com/ddddxxx/SwiftyOpenCC",
-        "state": {
-          "branch": "v2.0.0-beta",
-          "revision": "1d8105a0f7199c90af722bff62728050c858e777",
-          "version": null
-        }
-      },
-      {
-        "package": "TouchBarHelper",
-        "repositoryURL": "https://github.com/ddddxxx/TouchBarHelper",
-        "state": {
-          "branch": null,
-          "revision": "003d41193ac1c6ab9cc570a1923587298014bf1d",
-          "version": "0.1.0"
         }
       }
     ]

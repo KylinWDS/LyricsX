@@ -42,7 +42,15 @@ class TouchBarLyricsController: TouchBarSystemModalController {
             NSApp.touchBar = nil
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
                 self.showInControlStrip()
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+                    self.present()
+                }
             }
+        }
+        
+        NSLog("[LyricsX] TouchBar controller loaded")
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) { [weak self] in
+            self?.present()
         }
     }
     

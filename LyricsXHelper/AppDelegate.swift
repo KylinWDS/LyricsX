@@ -10,7 +10,7 @@
 import Cocoa
 import ScriptingBridge
 
-@NSApplicationMain
+@main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var musicPlayers: [SBApplication] = []
@@ -74,7 +74,7 @@ let playerBundleIdentifiers = [
     ["com.swinsian.Swinsian"],
 ]
 
-let groupDefaults = UserDefaults(suiteName: "3665V726AE.group.ddddxxx.LyricsX")!
+let groupDefaults: UserDefaults = UserDefaults(suiteName: "3665V726AE.group.ddddxxx.LyricsX") ?? .standard
 
 // Preference
 let preferredPlayerIndex = "PreferredPlayerIndex"

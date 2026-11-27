@@ -8,12 +8,13 @@
 //
 
 import Cocoa
+import Combine
 import CXShim
 import GenericID
 import MusicPlayer
 
-typealias ObservableObject = CombineX.ObservableObject
-typealias Published = CombineX.Published
+typealias ObservableObject = Combine.ObservableObject
+typealias Published = Combine.Published
 
 let fontNameFallbackCountMax = 1
 // 7 days. after this period of time since the app built, the app is not considered as "in review".
@@ -28,7 +29,7 @@ let lyricsXErrorDomain = "ddddxxx.LyricsX"
 let crowdinProjectURL = URL(string: "https://crowdin.com/project/lyricsx")!
 
 let defaults = UserDefaults.standard
-let groupDefaults = UserDefaults(suiteName: lyricsXGroupIdentifier)!
+let groupDefaults: UserDefaults = UserDefaults(suiteName: lyricsXGroupIdentifier) ?? .standard
 let defaultNC = NotificationCenter.default
 let workspaceNC = NSWorkspace.shared.notificationCenter
 let selectedPlayer = MusicPlayers.Selected.shared
@@ -126,6 +127,9 @@ extension UserDefaults.DefaultsKeys {
     
     static let lyricsWindowTextColor = Key<NSColor>("LyricsWindowTextColor", transformer: .keyedArchive)
     static let lyricsWindowHighlightColor = Key<NSColor>("LyricsWindowHighlightColor", transformer: .keyedArchive)
+
+    static let touchBarLyricsFontName = Key<String>("TouchBarLyricsFontName")
+    static let touchBarLyricsFontSize = Key<Int>("TouchBarLyricsFontSize")
     
     // Shortcut
     static let shortcutToggleMenuBarLyrics = Key<String>("ShortcutToggleMenuBarLyrics")
