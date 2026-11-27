@@ -30,6 +30,41 @@ Download from [releases](https://github.com/ddddxxx/LyricsX/releases).
 
 - macOS 10.11+
 
+## 关于 `adapt/xcode27-20261127` 分支（macOS 27.2 适配）
+
+> 上游 [ddddxxx/LyricsX](https://github.com/ddddxxx/LyricsX) 已停止维护。本分支是针对 **macOS 27.2.1 / Xcode 27.2** 的个人适配版，仅用于作者及固定小范围机器，不做上架、公证与自动更新。项目业务逻辑保持原样，只做兼容适配。
+
+### 关键改动
+
+- **播放数据源修复（重要）**：macOS 15.4 起系统将 MediaRemote 私有框架限制为 `com.apple.*` 身份的进程，原 `SystemMedia` 通道在 15.4+ 上完全读不到 Now Playing。本分支内置 [mediaremote-adapter](https://github.com/ungive/mediaremote-adapter)（利用系统 `/usr/bin/perl` 持有的 `com.apple.perl` 身份桥接），可识别任意正在播放的音乐 App（网易云音乐、Spotify 等）。
+- **依赖全部可复现化**：移除 Carthage 与所有 Git submodule 依赖；LyricsKit、TouchBarHelper、mediaremote-adapter vendor 进仓库（`Vendor/`）作为本地 SPM 包；Sparkle / AppCenter / OpenCC 以本地 API 兼容 stub 保留调用点（自动更新、崩溃上报、简繁转换当前为空实现）。
+- **签名与打包**：ad-hoc 签名（无需付费开发者账号），关闭沙盒 / hardened runtime / App Group 强依赖。
+- **Touch Bar**：加载后自动呈现歌词；DFRPrivate 私有 API 增加运行时探测；歌词颜色跟随桌面歌词颜色偏好，字体可通过偏好键 `TouchBarLyricsFontName` / `TouchBarLyricsFontSize` 调整。
+
+### 构建
+
+```bash
+git clone -b adapt/xcode27-20261127 https://github.com/KylinWDS/LyricsX.git
+cd LyricsX
+./Scripts/package.sh
+```
+
+产物位于 `.build/package/output/LyricsX.app` 与 `.build/package/LyricsX.zip`（arm64，Apple Silicon）。
+
+### 目标机器安装
+
+首次运行如被 Gatekeeper 拦截：
+
+```bash
+xattr -dr com.apple.quarantine /Applications/LyricsX.app
+```
+
+### 已知限制
+
+- 仅 arm64（Apple Silicon）。
+- 自动更新、崩溃上报、简繁转换暂为兼容 stub。
+- 逐字卡拉OK填色动画仅对带逐字时间标签的歌词生效（QQ 音乐源），逐行歌词只有整行切换。
+
 ## Features
 
 - Work perfectly with your favorite music players. [List of supported players](https://github.com/ddddxxx/MusicPlayer#supported-players)
