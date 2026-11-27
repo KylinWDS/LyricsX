@@ -53,7 +53,7 @@ cd LyricsX
 
 ### 目标机器安装
 
-首次运行如被 Gatekeeper 拦截：
+可直接从本仓库 [Releases](https://github.com/KylinWDS/LyricsX/releases) 下载打包好的 `LyricsX.zip`，解压后拖入「应用程序」即可。首次运行如被 Gatekeeper 拦截：
 
 ```bash
 xattr -dr com.apple.quarantine /Applications/LyricsX.app
@@ -91,6 +91,10 @@ LyricsX use custom lyrics file format "LRCX" which support word time tag, multi-
 <img src="docs/img/preview_3.jpg" width="1280px">
 
 ## Credit
+
+#### 上游项目
+
+本项目基于 [ddddxxx/LyricsX](https://github.com/ddddxxx/LyricsX) 适配而来，全部核心设计与功能均来自原作者 [@ddddxxx](https://github.com/ddddxxx)。感谢其多年维护这款优秀的 macOS 歌词应用，以及 LyricsKit、MusicPlayer、TouchBarHelper 等配套开源库。因上游已停止维护，本分支仅针对新版本 macOS 做兼容性适配，未改变原有设计与功能。
 
 #### Components
 
